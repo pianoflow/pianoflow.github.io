@@ -27,7 +27,7 @@
 
     <div class="table bg-darken-2" 
       v-component="plangular" 
-      v-src="'https://soundcloud.com/solopianomusic/sets/soft-solo-piano'">
+      v-src="'https://soundcloud.com/ira-martynyuk/sets/piano'">
       <div class="table-cell">
         <button class="h2 button-icon" v-on="click: playPause(player.playlistIndex)">
               <svg v-if="player.tracks[player.i] != track || !player.playing" v-plangular-icon="'play'"></svg>
@@ -35,7 +35,7 @@
             </button>
       </div>
       <div class="table-cell px2 full-width">
-        <h3 class="m0">{{ player.currentTrack.user.username }} - {{ player.currentTrack.title }}</h3>
+        <h3 class="m0">{{ player.currentTrack.title }}</h3>
       </div>
     </div>
 
