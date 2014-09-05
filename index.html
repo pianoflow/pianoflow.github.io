@@ -2,10 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Pianoradio</title>
-  <meta name="description" content="Create your own custom SoundCloud player with just HTML and CSS. Built with AngularJS">
+  <title>Pianoflow</title>
+  <meta name="description" content="Simply moving, simply beautiful... Pianoflow - Music to Quiet Your World.">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
   <link rel="icon" href="docs/favicon.png" />
   <link rel="docs/apple-touch-icon-precomposed" href="apple-touch-icon.png" />
   <link rel="stylesheet" href="docs/autobass.css"/>
@@ -24,21 +23,21 @@
  
 
   <section id="examples" class="container px2 py4 ">
-    <h2 class="mb1">PianoRadio</h2>
+    <h2 class="mb1">Pianoflow</h2>
 
     <div class="table bg-darken-2" 
-  v-component="plangular" 
-  v-src="'https://soundcloud.com/solopianomusic/sets/soft-solo-piano'">
-  <div class="table-cell">
-    <button class="h2 button-icon" v-on="click: playPause(player.playlistIndex)">
-          <svg v-if="player.tracks[player.i] != track || !player.playing" v-plangular-icon="'play'"></svg>
-          <svg v-if="player.tracks[player.i] == track && player.playing" v-plangular-icon="'pause'"></svg>
-        </button>
-  </div>
-  <div class="table-cell px2 full-width">
-    <h3 class="m0">{{ player.currentTrack.user.username }} - {{ player.currentTrack.title }}</h3>
-  </div>
-</div>
+      v-component="plangular" 
+      v-src="'https://soundcloud.com/solopianomusic/sets/soft-solo-piano'">
+      <div class="table-cell">
+        <button class="h2 button-icon" v-on="click: playPause(player.playlistIndex)">
+              <svg v-if="player.tracks[player.i] != track || !player.playing" v-plangular-icon="'play'"></svg>
+              <svg v-if="player.tracks[player.i] == track && player.playing" v-plangular-icon="'pause'"></svg>
+            </button>
+      </div>
+      <div class="table-cell px2 full-width">
+        <h3 class="m0">{{ player.currentTrack.user.username }} - {{ player.currentTrack.title }}</h3>
+      </div>
+    </div>
 
     
   </section>
@@ -57,8 +56,19 @@
 </div>
   
   <footer class="py2 bg-darken-2">
-    <div class="container px2">      
-      <p class="h6 m0">Made with love by <a href="https://vk.com/zloysalatik">Zloysalat</a>.</p>
+    <div class="container px2">
+        <table class="tg">          
+          <tr>
+            <td class="tg-031e">
+                <p class="h6 m0 px3">Made with love by <a href="https://vk.com/zloysalatik">Zloysalat</a>.</p>  
+            </td> 
+            <td class="tg-031e">
+                <p class="h6 m0">Pianoflow - Music to Quiet Your World. Simply moving, simply beautiful...</p>  
+            </td>
+                       
+          </tr>
+        </table>
+      
     </div>
   </footer>
 
