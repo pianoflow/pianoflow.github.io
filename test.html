@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Pianoflow</title>
+    
+    <meta name="title" content="Pianoflow" />
+    <meta name="description" content="Simply moving, simply beautiful... Pianoflow - Music to Quiet Your World.">
+    <link rel="image_src" href="docs/images/pianoflow.PNG" />    
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="docs/favicon.png" />
+  <link rel="docs/apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+  <link rel="stylesheet" href="docs/autobass.css"/>
+  <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+
+  <script src="//cdnjs.cloudflare.com/ajax/libs/vue/0.10.6/vue.min.js"></script>
+  <script src="v-plangular.min.js"></script>
+
+  <!--
+  <script src="docs/app.js"></script>
+  -->
+
+</head>
+<body id="vm" class="theme-dark-red">
+
+ <section id="examples" class="container px4 py4 ">   
+    <div class="bg-darken-2 rounded" v-component="plangular" v-src="'https://soundcloud.com/zloysalat/sets/musictoquietyourworld'">
+      <div class="p2 bg-darken-1">
+        <div class="table">
+          <h3 class="table-cell full-width m0">{{ user.username }}</h3>
+          <small class="monospace h6 table-cell nowrap">{{ currentTime | prettyTime }} - {{ duration | prettyTime }}</small>
+        </div>
+        <h1 class="m0">{{ title }}</h1>
+        <div class="table">
+          <div class="table-cell">
+            <button class="button-icon" v-on="click: previous()">
+              <svg v-plangular-icon="'previous'"></svg>
+            </button>
+          </div>
+          <div class="table-cell">
+            <button class="h2 button-icon" v-on="click: playPause(player.playlistIndex)">
+              <svg v-if="player.tracks[player.i] != track || !player.playing" v-plangular-icon="'play'"></svg>
+              <svg v-if="player.tracks[player.i] == track && player.playing" v-plangular-icon="'pause'"></svg>
+            </button>
+          </div>
+          <div class="table-cell">
+            <button class="button-icon" v-on="click: next()">
+              <svg v-plangular-icon="'next'"></svg>
+            </button>
+          </div>
+          <div class="table-cell full-width">
+            <div class="px1">
+              <progress class="" v-on="click: seek($event)" value="{{ currentTime / duration || 0 }}">{{ currentTime / duration }}</progress>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div v-repeat="t : tracks" class="">
+        <a href="#{{ t.title }}" class="block px2 py1 nav-item"
+          v-on="click: playPause($index)"
+          v-class="player.currentTrack == t ? 'bg-darken-3' : ''">
+          <span class="mr1">{{ $index }}.</span>
+          {{ t.user.username }} - {{ t.title }}
+        </a>
+      </div>
+    </div>
+ </section>   
+    
+
+    
+ 
+  <footer class="py2 bg-darken-2">
+    <div class="container px2">
+        <table class="tg">          
+          <tr>
+            <td class="tg-031e">
+                <p class="h6 m0 px3">Made with love by <a href="https://vk.com/zloysalatik">Zloysalat</a>.</p>  
+            </td> 
+            <td class="tg-031e">
+                <p class="h6 m0">Pianoflow - Music to Quiet Your World. Simply moving, simply beautiful...</p>  
+            </td>
+                       
+          </tr>
+        </table>
+      
+    </div>
+  </footer>
+
+
+<script> var vm = new Vue({ el: '#vm' }); </script>
+ 
+
+
+<script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.8.0.js" type="text/javascript">/script> 
+<script type="text/javascript">
+ $(function(){
+     setTimeout(function() {
+           $("button.button-icon").trigger('click');
+        },10);
+       });
+</script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54523205-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+    
+</body>
+</html>
