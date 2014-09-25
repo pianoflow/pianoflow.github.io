@@ -56,7 +56,8 @@
           </div>
         </div>
       </div>
-      <div v-repeat="t : tracks" class="">
+    <div class="scrollable">
+        <div v-repeat="t : tracks" class="">
         <a href="#{{ t.title }}" class="block px2 py1 nav-item"
           v-on="click: playPause($index)"
           v-class="player.currentTrack == t ? 'bg-darken-3' : ''">
@@ -65,26 +66,26 @@
         </a>
       </div>
     </div>
- </section>   
-    
-
-    
- 
-  <footer class="py2 bg-darken-2">
-    <div class="container px2">
-        <table class="tg">          
-          <tr>
-            <td class="tg-031e">
-                <p class="h6 m0 px3">Made with love by <a href="https://vk.com/zloysalatik">Zloysalat</a>.</p>  
-            </td> 
-            <td class="tg-031e">
-                <p class="h6 m0">Pianoflow - Music to Quiet Your World. Simply moving, simply beautiful...</p>  
-            </td>
-                       
-          </tr>
-        </table>
       
     </div>
+ </section>   
+   
+  <footer class="py1 bg-darken-3">
+      <div class="container px2">
+          <div class="leftdiv mr1">
+            <p class="h6 m0 py1">Pianoflow - Music to Quiet Your World. Simply moving, simply beautiful...</p>
+            <p class="h6 m0">Made with love by <a href="https://vk.com/zloysalatik">Mykhailo Yurkiv</a>.</p>
+            <nav class="py1">
+            <a href="https://github.com/zloysalat/pianoflow.github.io" class="nav-item py1 mr1">github.com/zloysalat/</a>
+            <a href="mailto:jurkiw.misha@gmail.com" class="nav-item py1 mr1">jurkiw.misha@gmail.com</a>
+               <a href="https://soundcloud.com/zloysalat/sets/musictoquietyourworld" class="nav-item py1 mr1 red">SoundCloud</a>
+          </nav>
+          </div>
+          <div class="leftdiv m1">
+            <a href="http://www.littlewebhut.com" class="nav-item">
+        <img src="/docs/android.png" alt="red ball"></a>
+          </div>
+        </div>
   </footer>
 
 
