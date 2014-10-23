@@ -13,9 +13,9 @@
   <link rel="docs/apple-touch-icon-precomposed" href="apple-touch-icon.png" />
   <link rel="stylesheet" href="docs/autobass.css"/>
   <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-
   <script src="//cdnjs.cloudflare.com/ajax/libs/vue/0.10.6/vue.min.js"></script>
   <script src="v-plangular.min.js"></script>
+<script src="jquery-1.11.1.min.js"></script>
 
   <!--
   <script src="docs/app.js"></script>
@@ -25,7 +25,15 @@
 <body id="vm" class="theme-dark-red">
 
  <section id="examples" class="container px4 py4 ">   
-    <div class="bg-darken-2 rounded" v-component="plangular" v-src="'https://soundcloud.com/pianoflow/sets/music'">
+    <div id="test" class="bg-darken-2 rounded" v-component="plangular">    
+
+        <script>
+            var items = Array("'https://soundcloud.com/pianoflow/sets/musictoquieyourworld'","'https://soundcloud.com/pianoflow/sets/music'");
+    var item = items[Math.floor(Math.random()*items.length)];
+    var myVar = "'https://soundcloud.com/pianoflow/sets/musictoquieyourworld'";
+    $("#test").attr("v-src", item);
+</script>
+        
       <div class="p2 bg-darken-1">
         <div class="table">
           <h3 class="table-cell full-width m0">{{ user.username }}</h3>
@@ -77,7 +85,11 @@
             <p class="h6 m0">Made with love by <a href="https://vk.com/zloysalatik">Mykhailo Yurkiv</a>.</p>
             <nav class="py1">
             <a href="https://github.com/zloysalat/pianoflow.github.io" class="nav-item py1 mr1">github.com/zloysalat/</a>
-            <a href="mailto:jurkiw.misha@gmail.com" class="nav-item py1 mr1">jurkiw.misha@gmail.com</a>
+                
+  
+                
+                
+                <a href="mailto:jurkiw.misha@gmail.com" class="nav-item py1 mr1">jurkiw.misha@gmail.com</a>
                <a href="https://soundcloud.com/zloysalat/sets/musictoquietyourworld" class="nav-item py1 mr1 red">SoundCloud</a>
           </nav>
           </div>
@@ -119,6 +131,8 @@
 		document.location ="android.html";
 	} // ]]>
 </script>
+    
+
     
 </body>
 </html>
