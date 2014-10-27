@@ -22,10 +22,14 @@ body {
     overflow-y: auto;
 }
 
-.sharebtnposition {
-top: 100px !important;
-right: 10px !important;
-position: absolute;
+.sharebtnposition {	    
+	width: 50%;
+    height: 50%;
+    margin: auto;
+    position: absolute;
+    top: 0; bottom: 0;
+    left: auto; right: 10px;
+    text-align: right;
 }
 
 .gray{
