@@ -44,6 +44,11 @@ body {
     float: left;
 }
 
+.desc{
+float: left;
+width: 70%;
+}
+
 footer {
 	width:100%;
 	position:absolute;
@@ -382,6 +387,9 @@ progress {
 
 .bg-darken-3 {
   background-color: rgba(0, 0, 0, 0.25); }
+
+.bg-darken-4 {
+  background-color: rgba(0, 0, 0, 0.4); }
 
 .bg-red-alpha {
   background-color: rgba(255, 85, 34, 0.125); }

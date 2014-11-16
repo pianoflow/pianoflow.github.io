@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title>Pianoflow</title>
     <meta name="title" content="PianoFlow - beautiful piano music." />
-    <meta name="description" content="This is online-radio with piano music 24/7 and with no ads. Pianoflow - Music to Quiet Your World.">
+    <meta name="description" content="Pianoflow - this is online-radio with piano music 24/7 and with no ads. The playlist has more than 30 hours of piano music and regularly updated with new compositions.">
     <link rel="image_src" href="docs/images/pianoflow.PNG" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="docs/favicon.png" />
@@ -32,7 +32,7 @@
                 </button>
             </div>
             <div class="table-cell px2 full-width">
-                <h3 class="m0">Music to Quiet Your World</h3>
+                <h3 class="m0">{{ player.currentTrack.user.username }} - {{ player.currentTrack.title }}</h3> 
             </div>
         </div>
     </section>
@@ -56,13 +56,16 @@
                 }
             })();
         </script>
-        <div class="pluso" data-background="transparent" data-options="medium,square,line,vertical,nocounter,theme=04" data-services="vkontakte,facebook,twitter,google,pinterest,tumblr,email" data-url="http://pianoflow.tk/" data-title="PianoFlow - beautiful piano music." data-description="This is online-radio with piano music 24/7 and with no ads. Relax and listen to the easy listening sounds of PianoFlow." data-user="1402635675" data-lang="en"></div>
+        <div class="pluso" data-background="transparent" data-options="medium,square,line,vertical,nocounter,theme=04" data-services="vkontakte,facebook,twitter,google,pinterest,tumblr,email" data-url="http://pianoflow.tk/" data-title="PianoFlow - beautiful piano music." data-description="Pianoflow - this is online-radio with piano music 24/7 and with no ads. The playlist has more than 30 hours of piano music and regularly updated with new compositions." data-user="1402635675" data-lang="en"></div>
     </div>
 
-    <footer class="py1 bg-darken-3">
+    <footer class="py1 bg-darken-4">
         <div class="container px2">
-            <div class="leftdiv mr2">
-                <p class="h6 m0 py1">Pianoflow - Music to Quiet Your World. Simply moving, simply beautiful...</p>
+            <div class="desc mr2">
+
+            </div>
+            <div class="desc mr2">
+                <p class="h6 m0 py1">Pianoflow - this is online-radio with piano music 24/7 and with no ads. The playlist has more than 30 hours of piano music and regularly updated with new compositions. Music provided by Soundcloud.</p>
                 <nav class="">
                     <a class="nav-item py1" href="https://twitter.com/pianoflowtk" target="_blank">
                         <span class="fa-stack fa-lg">
@@ -103,6 +106,9 @@
         var vm = new Vue({
             el: '#vm'
         });
+    </script>
+
+    <script>
     </script>
 
     <script>
