@@ -104,9 +104,14 @@
         $("#play").attr("v-src", item);
     </script>
     <script>
-        var vm = new Vue({
-            el: '#vm'
-        });
+        // var vm = new Vue({
+        //     el: '#vm'
+        // });
+        
+        var app = angular.module('app', ['plangular'])
+          .config(function(plangularConfigProvider){
+            plangularConfigProvider.clientId = '9c4981270863f59719aa8e62f7f4ccdd';
+          });
     </script>
 
     <script>
