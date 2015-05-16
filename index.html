@@ -31,6 +31,11 @@
                     <svg v-if="player.tracks[player.i] == track && player.playing" v-plangular-icon="'pause'"></svg>
                 </button>
             </div>
+            <div class="table-cell">
+                <button class="button-icon" v-on="click: next()">
+                  <svg v-plangular-icon="'next'"></svg>
+                </button>
+            </div>
             <div class="table-cell px2 full-width">
                 <h3 class="m0">{{ player.currentTrack.user.username }} - {{ player.currentTrack.title }}</h3> 
             </div>
