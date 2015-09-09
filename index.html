@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Pianoflow</title>
+    <meta name="title" content="PianoFlow - beautiful piano music." />
+    <meta name="description" content="This is online-radio with piano music 24/7 and with no ads. The playlist has more than 30 hours of piano music and regularly updated with new compositions.">
+    <link rel="image_src" href="docs/images/pianoflow.PNG" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="docs/favicon.png" />
+    <link rel="docs/apple-touch-icon-precomposed" href="apple-touch-icon.png" />
+    <link rel="stylesheet" href="docs/autobass.css" />
+    <link href="http://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="docs/font-awesome/css/font-awesome.min.css">
+    <script src="vue.min.js"></script>
+    <script src="v-plangular.min.js"></script>
+    <script src="jquery-1.11.1.min.js"></script>
+    <!--
+  <script src="docs/app.js"></script>
+  -->
+</head>
+
+<body id="vm" class="theme-dark-red">
+    <section id="examples" class="container px4 py4 ">
+        <h2 class="mb1">Pianoflow</h2>
+        <div id="play" class="bg-darken-2 rounded" v-component="plangular">
+            <div class="table-cell">
+                <button class="h2 button-icon" v-on="click: playPause(player.playlistIndex)">
+                    <svg v-if="player.tracks[player.i] != track || !player.playing" v-plangular-icon="'play'"></svg>
+                    <svg v-if="player.tracks[player.i] == track && player.playing" v-plangular-icon="'pause'"></svg>
+                </button>
+            </div>
+            <div class="table-cell">
+                <button class="button-icon" v-on="click: next()">
+                  <svg v-plangular-icon="'next'"></svg>
+                </button>
+            </div>
+            <div class="table-cell px2 full-width">
+                <h3 class="m0">{{ player.currentTrack.user.username }} - {{ player.currentTrack.title }}</h3> 
+            </div>
+        </div>
+    </section>
+
+    <div class="sharebtnposition">
+        <script type="text/javascript">
+            (function () {
+                if (window.pluso)
+                    if (typeof window.pluso.start == "function") return;
+                if (window.ifpluso == undefined) {
+                    window.ifpluso = 1;
+                    var d = document,
+                        s = d.createElement('script'),
+                        g = 'getElementsByTagName';
+                    s.type = 'text/javascript';
+                    s.charset = 'UTF-8';
+                    s.async = true;
+                    s.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://share.pluso.ru/pluso-like.js';
+                    var h = d[g]('body')[0];
+                    h.appendChild(s);
+                }
+            })();
+        </script>
+        <div class="pluso" data-background="transparent" data-options="medium,square,line,vertical,nocounter,theme=04" data-services="vkontakte,facebook,twitter,google,pinterest,tumblr,email" data-url="http://pianoflow.tk/" data-title="PianoFlow - beautiful piano music." data-description="This is online-radio with piano music 24/7 and with no ads. The playlist has more than 30 hours of piano music and regularly updated with new compositions." data-user="1402635675" data-lang="en"></div>
+    </div>
+
+    <footer class="py1 bg-darken-4">
+        <div class="container px2">
+            <div class="desc mr2">
+
+            </div>
+            <div class="desc mr2">
+                <p class="h6 m0 py1">This is online-radio with piano music 24/7 and with no ads. The playlist has more than 30 hours of piano music and regularly updated with new compositions. Music provided by Soundcloud.</p>
+                <nav class="">
+                    <a class="nav-item py1" href="https://twitter.com/pianoflowtk" target="_blank">
+                        <span class="fa-stack fa-lg">
+                        <i class="fa fa-twitter fa-stack-1x"></i>
+                    </span>
+                    </a>
+                    <a class="nav-item py1" href="https://vk.com/pianoflow" target="_blank">
+                        <span class="fa-stack fa-lg">  
+                        <i class="fa fa-vk fa-stack-1x"></i>
+                    </span>
+                    </a>
+                    <a class="nav-item py1 mr2" href="https://soundcloud.com/pianoflow/sets" target="_blank">
+                        <span class="fa-stack fa-lg">  
+                        <i class="fa fa-soundcloud fa-stack-1x"></i>
+                    </span>
+                    </a>
+                    <a href="mailto:pianoflowproject@gmail.com" target="_blank" class="nav-item py1 mr1">
+                        <i class="fa fa-envelope-o fa-lg"></i>
+                        pianoflowproject@gmail.com
+                    </a>
+                </nav>
+            </div>
+            <div class="leftdiv">
+                <a href="http://www.1mobile.com/pianoflow-2229800.html" target="_blank" class="nav-item">
+                    <img src="docs/android2.png">
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        var items = Array("'https://soundcloud.com/pianoflow/sets/musictoquieyourworld'",
+                          "'https://soundcloud.com/pianoflow/sets/music'",
+                          "'https://soundcloud.com/pianoflow/sets/music_november'");
+        var item = items[Math.floor(Math.random() * items.length)];
+        $("#play").attr("v-src", item);
+    </script>
+    <script>
+        var vm = new Vue({
+            el: '#vm'
+        });
+        
+    </script>
+
+    <script>
+    </script>
+
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+            m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+        ga('create', 'UA-54523205-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
+
+</html>
